@@ -63,6 +63,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-用hexo和github搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/10/用hexo和github搭建博客/" class="article-date">
+  <time datetime="2014-05-10T02:55:25.000Z" itemprop="datePublished">5月 10 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/10/用hexo和github搭建博客/">用hexo和github搭建博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>利用github和hexo搭建免费博客是灰常流行的啊，这篇文章给大家介绍下详细方法，过程很简单的，只要细心，一会就能看到建在github服务器上的博客站点咯！<br>ps：适用于Mac下的傻瓜教程，Windows/Linux可以参考</p>
+<h3 id="搭建方法">搭建方法</h3>
+<h4 id="1-github上建好repository">1.github上建好repository</h4>
+<p>注册github账号神马的大家应该都不用我讲啦，先在自己的repository目录下建立一个新的repository，名字是确定的，大家不要乱起啊。<br>比如：github账号是yoursite，建立的对应的repository就是：yoursite.github.io（PS：这也是将来自己博客的站点地址）</p>
+<h4 id="2-安装hexo">2.安装hexo</h4>
+<p>1.先装node：</p>
+<pre><code>brew <span class="keyword">install</span> node
+</code></pre><p>当然完全可以去官网下呀，附上官网链接（点击进入下载页面，选适合自己电脑的就OK啦）<br><a href="http://nodejs.org/download/" target="_blank">node.js</a><br>2.再装hexo:</p>
+<pre><code>npm <span class="keyword">install</span> -g hexo
+</code></pre><h4 id="3-生成并部署">3.生成并部署</h4>
+<p>1.好啦现在开始先生成本地的hexo文件夹，以后所有的东西（你的博客）都在里面，所以选个好的位置然后：</p>
+<pre><code>hexo init yoursite<span class="preprocessor">.github</span><span class="preprocessor">.io</span>
+</code></pre><p>这个xxx咱们还是用yoursite.github.io，这个文件夹下有好多东东，进去看看</p>
+<pre><code>cd yoursite<span class="preprocessor">.github</span><span class="preprocessor">.io</span>
+</code></pre><p>2.好的，在这个文件夹下，有个_config.yml文件，这个是咱们博客的一些配置信息，用自己喜爱的任意编辑器打开（博主喜欢sublime就以这个举例子了,用sublime的筒子们一定要给它建个软链，方便啊）</p>
+<pre><code>sublime _config<span class="preprocessor">.yml</span>
+</code></pre><p>3.打开之后开始修改里面的东东，#Site下信息的大家改成自己吧，之后是重要的部分，大家翻到最下面，看到deploy了木有，加上发布到github上的http地址：</p>
+<pre><code><span class="label">type:</span> github
+<span class="label">repository:</span> https://github<span class="preprocessor">.com</span>/yoursite/yoursite<span class="preprocessor">.github</span><span class="preprocessor">.io</span><span class="preprocessor">.git</span>
+<span class="label">branch:</span> master
+</code></pre><p>（PS：熊孩子们一定要记住把yoursite改成自己的github账号啊！）<br>4.好了，激动人心的发布时刻到了，首先generate一下（hexo generate == hexo g）</p>
+<pre><code>hexo <span class="keyword">generate</span>
+</code></pre><p>事实上这个时候，启动一个本地的服务器就可以看看自己的小博啦</p>
+<pre><code>hexo sever
+</code></pre><p>然后登陆<br>[yoursite]<a href="http://localhost:4000/" target="_blank">http://localhost:4000/</a><br>即可看到跑在本地服务器上的网站了，不过咱们的目标不是这个啊，所以继续：<br>然后deploy（hexo deploy == hexo d不多说）</p>
+<pre><code>hexo deploy
+</code></pre><p>5.这个时候，大家记得上github上看对应的yoursite.github.io有没有被成功push，一般没有问题的话过一会就能看到自己的博客主页啦，吼吼！</p>
+<h3 id="业界良心的后续">业界良心的后续</h3>
+<p>1.新建一篇博客，在yoursite.github.io下直接</p>
+<pre><code>hexo <span class="keyword">new</span> <span class="string">"xxx"</span>
+</code></pre><p>然后在source/_posts下就能看到以xxx命名的.md文件<br>2.每次有修改，都要hexo g 再hexo d哦！<br>3.大家以后在这上面写博客用的时Markdown语法（.md后缀都是Markdown哦，github上自动生成的readme都是md啊），所以聪明的大家要花5分钟左右学习下Markdown，以后要经常用，而且一学就会。特别友好推荐用简书写自己的博客（真的不是广告，简书大家看了就会觉得特别nice，预览模式屌爆了有木有！）：<br>[Markdown简书教程]（<a href="http://jianshu.io/p/q81RER）" target="_blank">http://jianshu.io/p/q81RER）</a><br>4.当然也不一定非要看这些整理好的Markdown教程是不是，可以看下这个完成的语法说明：<br>[Markdown语法说明]（<a href="http://wowubuntu.com/markdown/）" target="_blank">http://wowubuntu.com/markdown/）</a></p>
+<h3 id="可能出现问题的情况">可能出现问题的情况</h3>
+<p>1.完成所有步骤之后，发现是站点是404错误。<br>-github告诉您需要大概十分钟的时间等待，所以也不要着急<br>2.如果还有问题，估计大概也许可能是ssh认证的问题，大家不要着急，有github官方解决方案哦，非常简明易懂，大家照着来：<br>[SSH Key]（<a href="https://help.github.com/articles/generating-ssh-keys）" target="_blank">https://help.github.com/articles/generating-ssh-keys）</a><br>3.如果还是不是不行，请请教周边大牛或者使用神器Google</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/05/10/用hexo和github搭建博客/" data-id="dlyasm4gmzg4ysvv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/05/09/hello-world/" class="article-date">
@@ -90,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/05/09/hello-world/" data-id="sk47gjzujcd15x89" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/05/09/hello-world/" data-id="a9w0kd9jizyvnltq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,7 +184,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">五月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">五月 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -125,6 +194,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/05/10/用hexo和github搭建博客/">用hexo和github搭建博客</a>
+          </li>
         
           <li>
             <a href="/2014/05/09/hello-world/">Hello World</a>
