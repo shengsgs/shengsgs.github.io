@@ -59,9 +59,8 @@
     </header>
     <div class="entry">
       
-        <p>利用github和hexo搭建免费博客是灰常流行的啊，这篇文章给大家介绍下详细方法，过程很简单的，只要细心，一会就能看到建在github服务器上的博客站点咯！</p>
-<p>ps：适用于Mac下的傻瓜教程，Windows/Linux可以参考</p>
-<h3 id="搭建方法">搭建方法</h3>
+        <p>利用github和hexo搭建免费博客是灰常流行的啊，这篇文章给大家介绍下详细方法，过程很简单的，只要细心，一会就能看到建在github服务器上的博客站点咯！<br>ps：适用于Mac下的傻瓜教程，Windows/Linux可以参考</p>
+<h2 id="搭建方法">搭建方法</h2>
 <h4 id="1-github上建好repository">1.github上建好repository</h4>
 <p>注册github账号神马的大家应该都不用我讲啦，先在自己的repository目录下建立一个新的repository，名字是确定的，大家不要乱起啊。<br>比如：github账号是yoursite，建立的对应的repository就是：yoursite.github.io（PS：这也是将来自己博客的站点地址）</p>
 <h4 id="2-安装hexo">2.安装hexo</h4>
@@ -84,19 +83,20 @@
 <pre><code>hexo <span class="keyword">generate</span>
 </code></pre><p>事实上这个时候，启动一个本地的服务器就可以看看自己的小博啦</p>
 <pre><code>hexo sever
-</code></pre><p>然后登陆<br>[yoursite]<a href="http://localhost:4000/" target="_blank">http://localhost:4000/</a><br>即可看到跑在本地服务器上的网站了，不过咱们的目标不是这个啊，所以继续：<br>然后deploy（hexo deploy == hexo d不多说）</p>
+</code></pre><p>然后登陆<br><a href="http://localhost:4000/" target="_blank">localhost</a><br>即可看到跑在本地服务器上的网站了，不过咱们的目标不是这个啊，所以继续：<br>然后deploy（hexo deploy == hexo d不多说）</p>
 <pre><code>hexo deploy
 </code></pre><p>5.这个时候，大家记得上github上看对应的yoursite.github.io有没有被成功push，一般没有问题的话过一会就能看到自己的博客主页啦，吼吼！</p>
-<h3 id="业界良心的后续">业界良心的后续</h3>
+<h2 id="业界良心的后续">业界良心的后续</h2>
 <p>1.新建一篇博客，在yoursite.github.io下直接</p>
 <pre><code>hexo <span class="keyword">new</span> <span class="string">"xxx"</span>
-</code></pre><p>然后在source/_posts下就能看到以xxx命名的.md文件<br>2.每次有修改，都要hexo g 再hexo d哦！</p>
-<p>3.大家以后在这上面写博客用的时Markdown语法（.md后缀都是Markdown哦，github上自动生成的readme都是md啊），所以聪明的大家要花5分钟左右学习下Markdown，以后要经常用，而且一学就会。特别友好推荐用简书写自己的博客（真的不是广告，简书大家看了就会觉得特别nice，预览模式屌爆了有木有！）：<br>[Markdown简书教程]（<a href="http://jianshu.io/p/q81RER）" target="_blank">http://jianshu.io/p/q81RER）</a></p>
-<p>4.当然也不一定非要看这些整理好的Markdown教程是不是，可以看下这个完成的语法说明：<br>[Markdown语法说明]（<a href="http://wowubuntu.com/markdown/）" target="_blank">http://wowubuntu.com/markdown/）</a></p>
-<h3 id="可能出现问题的情况">可能出现问题的情况</h3>
+</code></pre><p>然后在source/_posts下就能看到以xxx命名的.md文件 </p>
+<p>2.每次有修改，都要hexo g 再hexo d哦！</p>
+<p>3.大家以后在这上面写博客用的时Markdown语法（.md后缀都是Markdown哦，github上自动生成的readme都是md啊），所以聪明的大家要花5分钟左右学习下Markdown，以后要经常用，而且一学就会。特别友好推荐用简书写自己的博客（真的不是广告，简书大家看了就会觉得特别nice，预览模式屌爆了有木有！）：<br><a href="http://jianshu.io/p/q81RER" target="_blank">Markdown简书教程</a></p>
+<p>4.当然也不一定非要看这些整理好的Markdown教程是不是，可以看下这个完成的语法说明：<br><a href="http://wowubuntu.com/markdown/" target="_blank">Markdown语法说明</a></p>
+<h2 id="可能出现问题的情况">可能出现问题的情况</h2>
 <p>1.完成所有步骤之后，发现是站点是404错误。<br>-github告诉您需要大概十分钟的时间等待，所以也不要着急</p>
-<p>2.如果还有问题，估计大概也许可能是ssh认证的问题，大家不要着急，有github官方解决方案哦，非常简明易懂，大家照着来：<br>[SSH Key]（<a href="https://help.github.com/articles/generating-ssh-keys）" target="_blank">https://help.github.com/articles/generating-ssh-keys）</a></p>
-<p>3.如果还是不是不行，请请教周边大牛或者使用Google神器!</p>
+<p>2.如果还有问题，估计大概也许可能是ssh认证的问题，大家不要着急，有github官方解决方案哦，非常简明易懂，大家照着来：<br><a href="https://help.github.com/articles/generating-ssh-keys" target="_blank">SSH Key</a></p>
+<p>3.如果还是不是不行，请请教周边大牛或者使用神器Google</p>
 
       
     </div>
