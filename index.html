@@ -50,6 +50,72 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-05-27T02:29:11.000Z"><a href="/2014/05/27/linkedlist/">5月 27 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/05/27/linkedlist/">单链表反转的递归和非递归方案</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>反转类型问题是面试中的常见问题。如反转字符串，反转链表等，今天给出利用递归和非递归方法解决反转链表问题的两个解决思路和代码：</p>
+<h2 id="非递归解法：">非递归解法：</h2>
+<p>非递归来解决问题，用迭代的方法可以说思路是比较明确的。从头节点开始，依次用节点来表示当前节点和其指向的下一个节点，并且保存指向后续节点的指针，然后把节点间的指向关系进行反转。代码如下：（返回值使用Node*型主要是为了链式操作）</p>
+<pre><code>Node* reverseList(Node* head)
+{
+<span class="keyword">if</span>(head == <span class="literal">NULL</span> || head-&gt;<span class="keyword">next</span> == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;
+Node* p = head;
+Node* q = head-&gt;<span class="keyword">next</span>;
+Node* r = <span class="literal">NULL</span>;
+
+head-&gt;<span class="keyword">next</span> = <span class="literal">NULL</span>;
+<span class="keyword">while</span>(q)
+{
+    r = q-&gt;<span class="keyword">next</span>;
+    q-&gt;<span class="keyword">next</span> = p;
+    p = q;
+    q = r;
+}
+head = p;
+<span class="keyword">return</span> head;
+}
+</code></pre><h2 id="递归解法：">递归解法：</h2>
+<p>递归的思路可谓非常巧妙。<br>（1）如果链表只有一个节点的话，反转整个链表相当于直接返回这个节点，没有节点直接返回；<br>（2）如果有很多个节点如1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6,那么反转的过程相当于反转1-&gt;l{}（其中集合l{}表示已经反转完成的剩下部分节点）<br>（3）然后递归反转l{}中的节点，直到到递归出口，即最后一个节点</p>
+<p>采用递归的思路，代码就非常简洁：</p>
+<pre><code>Node * reverseListByRecursive(Node * head)
+{
+    <span class="keyword">if</span>(head == <span class="literal">NULL</span>|| head-&gt;<span class="keyword">next</span> == <span class="literal">NULL</span>) <span class="keyword">return</span> head;
+    Node *p = reverseListByRecuisive(head-&gt;<span class="keyword">next</span>);
+
+   head-&gt;<span class="keyword">next</span>-&gt;<span class="keyword">next</span> = head;
+   head -&gt;<span class="keyword">next</span> = <span class="literal">NULL</span>;
+   <span class="keyword">return</span> p;
+}
+</code></pre><p>如果童鞋们在理解的时候觉得理解递归或者迭代有困难，可以先从比较基础的入门，如斐波那契数列的递归和非递归解决，也是几乎一样的想法。毕竟递归是很重要的设计思路，想明白递归才能更好地理解动态规划等其他重要的东西。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-05-10T02:55:25.000Z"><a href="/2014/05/10/用hexo和github搭建博客/">5月 10 2014</a></time>
       
       
